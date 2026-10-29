@@ -68,7 +68,7 @@
     transition: background-color .25s, border-color .25s;
     border-bottom: 1px solid transparent;
   }
-  .header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 24px; }
+  .header-inner { max-width: 960px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 24px; }
   .logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; color: #fff; white-space: nowrap; }
   .logo:hover { text-decoration: none; }
   .menu { display: flex; gap: 24px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
@@ -94,7 +94,7 @@
   }
   #field { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(15,22,38,.82) 0%, rgba(15,22,38,.35) 55%, rgba(15,22,38,.6) 100%); pointer-events: none; }
-  .hero-text { position: relative; z-index: 1; max-width: 1080px; width: 100%; margin: 0 auto; padding: 96px 24px 80px; }
+  .hero-text { position: relative; z-index: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 96px 24px 80px; }
   .hello { font-size: 1.15rem; color: rgba(255,255,255,.78); margin: 0 0 6px; }
   .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 8vw, 5.6rem); line-height: 1.02; margin: 0 0 18px; letter-spacing: -.015em; }
   .hero h1 .zh-name { display: block; font-size: .42em; color: rgba(255,255,255,.7); margin-top: 10px; letter-spacing: .1em; }
@@ -117,14 +117,15 @@
   /* ---------- sections ---------- */
   section { padding: 84px 0; }
   section.band { background: var(--band); }
-  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
   h2 { font-family: var(--serif); font-weight: 500; font-size: 2.2rem; line-height: 1.15; margin: 0 0 34px; }
   p { margin: 0 0 16px; }
 
   /* about */
-  .about { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; align-items: start; }
-  .portrait { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 25%; border-radius: 8px; display: block; }
+  .about { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 48px; align-items: start; }
+  .portrait { width: 100%; height: auto; border-radius: 8px; display: block; box-shadow: 0 12px 28px rgba(0,0,0,.18); }
   .about-text p { max-width: 70ch; }
+  .about-text p, .intro, .theme p, .news li, .publist li, .service p { text-align: justify; }
   .degrees { margin: 22px 0; padding: 0; list-style: none; font-family: var(--serif); font-style: italic; font-size: 1.06rem; color: var(--muted); }
   .degrees li { padding: 2px 0; }
   .interests { padding: 16px 20px; border-left: 3px solid var(--c0); background: var(--band); border-radius: 0 6px 6px 0; }
@@ -132,8 +133,9 @@
   .interests .sep { color: var(--muted); margin: 0 .45em; font-weight: 400; }
 
   /* research */
-  .intro { max-width: 72ch; color: var(--muted); margin-bottom: 36px; }
-  .theme { padding: 30px 0; max-width: 860px; }
+  .intro { max-width: 880px; color: var(--muted); margin-bottom: 36px; }
+  .theme { padding: 30px 0; max-width: 880px; }
+  .intro + .theme { padding-top: 0; }
   .theme + .theme { border-top: 1px solid var(--rule); }
   .theme h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; line-height: 1.3; margin: 0 0 12px; }
   .related { font-weight: 600; margin: 18px 0 8px; }
@@ -150,7 +152,7 @@
   .lk a { font-size: .86rem; font-weight: 600; margin-left: 2px; }
 
   /* news */
-  .news { list-style: none; margin: 0; padding: 0; max-width: 820px; }
+  .news { list-style: none; margin: 0; padding: 0; max-width: 880px; }
   .news li { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--rule); }
   .news li:last-child { border-bottom: 0; }
   .news .d { font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -161,7 +163,7 @@
   /* publications */
   .legend { color: var(--muted); font-size: .92rem; margin: -18px 0 22px; }
   .pubgroup { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin: 30px 0 8px; }
-  .publist { margin: 0; padding-left: 1.4em; }
+  .publist { margin: 0; padding-left: 1.4em; max-width: 880px; }
   .publist li { padding: 8px 0 8px 4px; font-size: .97rem; }
   .publist li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
   .all { margin-top: 26px; font-weight: 600; }
@@ -169,7 +171,7 @@
   .service h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin: 0 0 8px; }
 
   /* contact */
-  .card { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 32px; max-width: 860px; }
+  .card { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 32px; max-width: 880px; }
   .card h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; margin: 0 0 8px; }
   .card .addr { color: var(--muted); margin: 0; }
   .clinks { list-style: none; margin: 0; padding: 0; }
@@ -195,7 +197,7 @@
 
   @media (max-width: 860px) {
     .about { grid-template-columns: 1fr; gap: 28px; }
-    .portrait { max-width: 220px; }
+    .portrait { max-width: 280px; }
     .card { grid-template-columns: 1fr; gap: 18px; }
   }
   @media (max-width: 620px) {
@@ -225,7 +227,7 @@
       <a href="#news"><span class="en">News</span><span class="zh">动态</span></a>
       <a href="#publications"><span class="en">Publications</span><span class="zh">节选作品</span></a>
       <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
-      <a href="#life" id="lifeNav"><span class="en">Life</span><span class="zh">生活</span></a>
+      <a href="#life" id="lifeNav" hidden><span class="en">Life</span><span class="zh">生活</span></a>
     </nav>
     <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">中文</button>
   </div>
@@ -254,8 +256,8 @@
     <div class="container">
       <h2><span class="en">About</span><span class="zh">个人简介</span></h2>
       <div class="about">
-        <!-- To change the photo: upload assets/avatar.jpg and set src="assets/avatar.jpg" -->
-        <img class="portrait" src="data:image/jpeg;base64,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" alt="Portrait of Wei Guo" width="250" height="250">
+        <!-- To change the photo: replace assets/avatar.jpg (portrait orientation works best). -->
+        <img class="portrait" src="assets/avatar.jpg" alt="Portrait of Wei Guo" width="900" height="1200">
         <div class="about-text">
           <p class="en">
             Hi, I am Wei, a PhD candidate in Photonics at <a href="https://www.epfl.ch/">EPFL</a>, working in the
@@ -328,8 +330,8 @@
       <div class="theme">
         <div>
           <h3><span class="en">2. Solid-state nanopore sensing</span><span class="zh">2. 固态纳米孔传感</span></h3>
-          <p class="en">We developed wafer-scale fabrication of ultra-low-noise solid-state nanopores with 5&nbsp;nm features, together with a deep-learning signal reconstruction algorithm. Our codesigned platform measures DNA nanostructures at 10&nbsp;nm resolution, a step toward next-generation molecular sequencing. <a href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">[bioRxiv]</a></p>
-          <p class="zh">我们研发了具有 5 纳米特征尺寸的超低噪声固态纳米孔的晶圆级制造技术，并开发了配套的深度学习信号重建算法，实现了 DNA 纳米结构的 10 nm 分辨率测量，有望用于生物分子的下一代测序技术。<a href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">[bioRxiv]</a></p>
+          <p class="en">We developed wafer-scale fabrication of ultra-low-noise solid-state nanopores with 5&nbsp;nm features, together with a deep-learning signal reconstruction algorithm, with the potential for reliable measurement of fast, low-SNR translocation events.</p>
+          <p class="zh">我们研发了具有 5 纳米特征尺寸的超低噪声固态纳米孔的晶圆级制造技术，并开发了配套的深度学习信号重建算法，有望用于高速、低信噪比易位事件的可靠测量。</p>
           <p class="related"><span class="en">Related paper:</span><span class="zh">相关论文：</span></p>
           <ul class="cites">
             <li>Cai, N., <span class="me">Guo, W.</span>, Teng, Y., Lou, Y., Wong, S.-H., Naidu, A. S., Cona, F., Thei, F., Chen, T.-H., Bastings, M., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">A generalizable codesigned platform for solid-state nanopore sensing beyond the capacitive-noise constraints.</a> <span class="jn">bioRxiv</span> (2026). <span class="lk"><a href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">[bioRxiv]</a></span></li>
@@ -341,7 +343,7 @@
       <div class="theme">
         <div>
           <h3><span class="en">3. Polarimetric sensing and metrology</span><span class="zh">3. 偏振传感与精密测量</span></h3>
-          <p class="en">Before EPFL, I built polarization scattering and Mueller matrix imaging instruments. A multi-angle polarization scattering system with an inversion algorithm sizes and identifies airborne particles down to the 500&nbsp;nm scale in real time, a dual-wavelength Mueller matrix system unwraps polarization phase to remove the accuracy limit set by phase jumps in biological samples, and flat-field illumination with microlens arrays improves the image quality of Mueller matrix imaging.</p>
+          <p class="en">At Tsinghua University, I built polarization scattering and Mueller matrix imaging instruments. A multi-angle polarization scattering system with an inversion algorithm sizes and identifies airborne particles down to the 500&nbsp;nm scale in real time, a dual-wavelength Mueller matrix system unwraps polarization phase to remove the accuracy limit set by phase jumps in biological samples, and flat-field illumination with microlens arrays improves the image quality of Mueller matrix imaging.</p>
           <p class="zh">在清华大学期间，搭建了偏振散射与 Mueller 矩阵成像系统：开发多角度偏振散射测量系统及属性反演算法，实现 500 纳米级颗粒的实时粒径检测与成分解析；提出双波长 Mueller 矩阵成像与偏振相位解包裹策略，解决了生物样品中相位跳变对测量精度的限制；利用微透镜阵列实现平场照明，提升了 Mueller 矩阵成像的图像质量。</p>
           <p class="related"><span class="en">Related papers:</span><span class="zh">相关论文：</span></p>
           <ul class="cites">
@@ -352,15 +354,6 @@
         </div>
       </div>
 
-      <!-- Review -->
-      <div class="theme">
-        <h3><span class="en">Review</span><span class="zh">综述</span></h3>
-        <p class="en">A review of optical methods that observe living cells and nano- and microsystems in situ and at nanoscale resolution, while they are working.</p>
-        <p class="zh">系统阐述在纳米分辨率下对活细胞与微纳系统进行原位、工作状态下观测的光学方法。</p>
-        <ul class="cites">
-          <li><span class="me">Guo, W.</span><sup>†</sup>, Ronceray, N.<sup>†</sup>, Mayner, E.<sup>†</sup>, Radenovic, A.<sup>#</sup> <span class="ttl">Functional optical nanoscopy: imaging nano- and microsystems in operando.</span> <span class="st"><span class="en">Under review.</span><span class="zh">审稿中。</span></span></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -372,12 +365,12 @@
         <li><span class="d">[2026-09]</span>
           <span><span class="en">Gave a talk at the Nature Conference on <i>Next-Generation Fluorescence Microscopy</i>, Tsinghua University, Beijing, China.</span><span class="zh">在 Nature 期刊会议 <i>Next-Generation Fluorescence Microscopy</i>（中国北京，清华大学）作报告。</span></span></li>
         <li><span class="d">[2026-08]</span>
-          <span><span class="en">Honored to receive the <b>Jeffrey Hubbell and Melody Swartz Young Bioengineer Award</b> (initially called the ‘Future Leaders in Bioengineering Award’) at EPFL Bioengineering Day, Lausanne, Switzerland. The award goes to one recipient per year, with PhD students and postdocs competing together.</span><span class="zh">荣获瑞士洛桑 EPFL 生物工程日 <b>Jeffrey Hubbell and Melody Swartz Young Bioengineer Award</b>（原名 ‘Future Leaders in Bioengineering Award’）。该奖每年一名，博士生与博士后共同参评。</span></span></li>
+          <span><span class="en">Honored to receive the <b>Jeffrey Hubbell and Melody Swartz Young Bioengineer Award</b> (initially called the ‘Future Leaders in Bioengineering Award’) at EPFL, Lausanne, Switzerland. The award goes to one recipient per year, with PhD students and postdocs competing together.</span><span class="zh">荣获瑞士洛桑 EPFL <b>Jeffrey Hubbell and Melody Swartz Young Bioengineer Award</b>（原名 ‘Future Leaders in Bioengineering Award’）。该奖每年一名，博士生与博士后共同参评。</span></span></li>
         <li><span class="d">[2026-08]</span>
           <span><span class="en">SPIFFI is published in <i>Nature Methods</i>, described by the journal as a fundamentally new approach and featured in a <a href="https://www.nature.com/articles/s41592-026-03195-7">Research Briefing</a>. <a href="https://www.nature.com/articles/s41592-026-03196-6">[Paper]</a> <a href="https://www.nature.com/articles/s41592-026-03195-7">[Research Briefing]</a></span><span class="zh">SPIFFI 发表于 <i>Nature Methods</i>，被期刊评价为超分辨成像领域的全新技术，并以 <a href="https://www.nature.com/articles/s41592-026-03195-7">Research Briefing</a> 专题报道。<a href="https://www.nature.com/articles/s41592-026-03196-6">[Paper]</a> <a href="https://www.nature.com/articles/s41592-026-03195-7">[Research Briefing]</a></span></span>
           <!-- add a picture under any item: <img class="news-img" src="assets/xxx.jpg" alt="..."> --></li>
         <li><span class="d">[2026-06]</span>
-          <span><span class="en">Our work on single-molecule dipole orientation at 2D-crystal interfaces is published in <i>Nature Communications</i>. <small class="aside">(Sadly, after five rounds of review at <i>Nature Photonics</i>.)</small> <a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span><span class="zh">二维晶体界面单分子偶极取向的工作发表于 <i>Nature Communications</i>。<small class="aside">（遗憾的是，此前在 <i>Nature Photonics</i> 经历了五轮审稿。）</small><a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span></span></li>
+          <span><span class="en">Our work on single-molecule dipole orientation at 2D-crystal interfaces is published in <i>Nature Communications</i>. <a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span><span class="zh">二维晶体界面单分子偶极取向的工作发表于 <i>Nature Communications</i>。<a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span></span></li>
         <li><span class="d">[2024-06]</span>
           <span><span class="en">Gave a talk at <i>From Solid State to Biophysics XI</i>, Dubrovnik, Croatia.</span><span class="zh">在 <i>From Solid State to Biophysics XI</i> 会议（克罗地亚杜布罗夫尼克）作报告。</span></span></li>
         <li><span class="d">[2021-09]</span>
@@ -392,13 +385,9 @@
       <h2><span class="en">Selected publications</span><span class="zh">节选作品</span></h2>
       <p class="legend"><span class="en"># corresponding author, † equal contribution</span><span class="zh"># 通讯作者，† 共同第一作者</span></p>
 
-      <p class="pubgroup"><span class="en">Journal articles</span><span class="zh">期刊论文</span></p>
+      <p class="pubgroup"><span class="en">Review</span><span class="zh">综述</span></p>
       <ol class="publist">
-        <li><span class="me">Guo, W.</span><sup>#</sup>, Feletti, L., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.nature.com/articles/s41592-026-03196-6">Spatial polarization-induced fluorescence fluctuation imaging (SPIFFI) enables single-shot super-resolution and multidimensional imaging.</a> <span class="jn">Nature Methods</span> (2026). <span class="lk"><a href="https://www.nature.com/articles/s41592-026-03196-6">[Paper]</a> <a href="https://www.nature.com/articles/s41592-026-03195-7">[Research Briefing]</a></span></li>
-        <li><span class="me">Guo, W.</span><sup>#</sup>, Chen, T.-H., Ronceray, N., Mayner, E., Watanabe, K., Taniguchi, T., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.nature.com/articles/s41467-026-74191-w">Emission dipole orientation reveals dynamic single-molecule interactions with 2D crystals at solvent interfaces.</a> <span class="jn">Nature Communications</span> (2026). <span class="lk"><a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span></li>
-        <li>Song, J.<sup>†</sup>, <span class="me">Guo, W.</span><sup>†</sup>, Zeng, N.<sup>#</sup>, Ma, H. <span class="ttl">Polarization phase unwrapping by a dual-wavelength Mueller matrix imaging system.</span> <span class="jn">Optics Letters</span> (2023).</li>
-        <li><span class="me">Guo, W.</span><sup>†</sup>, Song, J.<sup>†</sup>, Zeng, N.<sup>#</sup>, Ma, H. <span class="ttl">Mueller matrix imaging optimized by uniform illumination.</span> <span class="jn">Frontiers in Physics</span> (2022).</li>
-        <li><span class="me">Guo, W.</span>, Zeng, N.<sup>#</sup>, Liao, R., Xu, Q., Guo, J., He, Y., Di, H., Hua, D., Ma, H.<sup>#</sup> <span class="ttl">Simultaneous retrieval of aerosol size and composition by multi-angle polarization scattering measurements.</span> <span class="jn">Optics and Lasers in Engineering</span> (2022).</li>
+        <li><span class="me">Guo, W.</span><sup>†</sup>, Ronceray, N.<sup>†</sup>, Mayner, E.<sup>†</sup>, Radenovic, A.<sup>#</sup> <span class="ttl">Functional optical nanoscopy: imaging nano- and microsystems in operando.</span> <span class="st"><span class="en">Under review.</span><span class="zh">审稿中。</span></span></li>
       </ol>
 
       <p class="pubgroup"><span class="en">Preprints</span><span class="zh">预印本</span></p>
@@ -406,9 +395,13 @@
         <li>Cai, N., <span class="me">Guo, W.</span>, Teng, Y., Lou, Y., Wong, S.-H., Naidu, A. S., Cona, F., Thei, F., Chen, T.-H., Bastings, M., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">A generalizable codesigned platform for solid-state nanopore sensing beyond the capacitive-noise constraints.</a> <span class="jn">bioRxiv</span> (2026). <span class="lk"><a href="https://www.biorxiv.org/content/10.64898/2026.07.06.731876">[bioRxiv]</a></span></li>
       </ol>
 
-      <p class="pubgroup"><span class="en">Review</span><span class="zh">综述</span></p>
+      <p class="pubgroup"><span class="en">Journal articles</span><span class="zh">期刊论文</span></p>
       <ol class="publist">
-        <li><span class="me">Guo, W.</span><sup>†</sup>, Ronceray, N.<sup>†</sup>, Mayner, E.<sup>†</sup>, Radenovic, A.<sup>#</sup> <span class="ttl">Functional optical nanoscopy: imaging nano- and microsystems in operando.</span> <span class="st"><span class="en">Under review.</span><span class="zh">审稿中。</span></span></li>
+        <li><span class="me">Guo, W.</span><sup>#</sup>, Feletti, L., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.nature.com/articles/s41592-026-03196-6">Spatial polarization-induced fluorescence fluctuation imaging (SPIFFI) enables single-shot super-resolution and multidimensional imaging.</a> <span class="jn">Nature Methods</span> (2026). <span class="lk"><a href="https://www.nature.com/articles/s41592-026-03196-6">[Paper]</a> <a href="https://www.nature.com/articles/s41592-026-03195-7">[Research Briefing]</a></span></li>
+        <li><span class="me">Guo, W.</span><sup>#</sup>, Chen, T.-H., Ronceray, N., Mayner, E., Watanabe, K., Taniguchi, T., Radenovic, A.<sup>#</sup> <a class="ttl" href="https://www.nature.com/articles/s41467-026-74191-w">Emission dipole orientation reveals dynamic single-molecule interactions with 2D crystals at solvent interfaces.</a> <span class="jn">Nature Communications</span> (2026). <span class="lk"><a href="https://www.nature.com/articles/s41467-026-74191-w">[Paper]</a></span></li>
+        <li>Song, J.<sup>†</sup>, <span class="me">Guo, W.</span><sup>†</sup>, Zeng, N.<sup>#</sup>, Ma, H. <span class="ttl">Polarization phase unwrapping by a dual-wavelength Mueller matrix imaging system.</span> <span class="jn">Optics Letters</span> (2023).</li>
+        <li><span class="me">Guo, W.</span><sup>†</sup>, Song, J.<sup>†</sup>, Zeng, N.<sup>#</sup>, Ma, H. <span class="ttl">Mueller matrix imaging optimized by uniform illumination.</span> <span class="jn">Frontiers in Physics</span> (2022).</li>
+        <li><span class="me">Guo, W.</span>, Zeng, N.<sup>#</sup>, Liao, R., Xu, Q., Guo, J., He, Y., Di, H., Hua, D., Ma, H.<sup>#</sup> <span class="ttl">Simultaneous retrieval of aerosol size and composition by multi-angle polarization scattering measurements.</span> <span class="jn">Optics and Lasers in Engineering</span> (2022).</li>
       </ol>
 
       <p class="all"><span class="en">To see all publications, visit my <a href="https://scholar.google.com/citations?user=jOyIM0oAAAAJ&amp;hl=en">Google Scholar</a> or <a href="https://orcid.org/0000-0001-6220-3880">ORCID</a> profile.</span><span class="zh">查看全部论文，请访问我的 <a href="https://scholar.google.com/citations?user=jOyIM0oAAAAJ&amp;hl=en">Google Scholar</a> 或 <a href="https://orcid.org/0000-0001-6220-3880">ORCID</a> 主页。</span></p>
@@ -460,7 +453,8 @@
        and delete the <figure> blocks you don't need. Add more by copying a <figure>.
        Photos that are missing are hidden automatically online; when you preview locally,
        empty slots are shown as dashed boxes so you can see what still needs a photo. -->
-  <section id="life" class="band">
+  <!-- Life section hidden for now; remove the `hidden` attributes here and on #lifeNav above to restore it after adding photos to assets/life/. -->
+  <section id="life" class="band" hidden>
     <div class="container">
       <h2><span class="en">Life</span><span class="zh">生活</span></h2>
       <p class="intro"><span class="en">A few moments from life outside the lab.</span><span class="zh">实验室之外的一些生活片段。</span></p>
@@ -511,8 +505,8 @@
 
   /* ---------- typed roles (edit these lists to change the rotating text; English entries include a/an) ---------- */
   var ROLES = {
-    en: ['a PhD candidate in Photonics at EPFL.', 'a high-resolution imaging technology developer.', 'exploring AI4Science.'],
-    zh: ['EPFL 光子学博士研究生。', '高分辨成像技术开发者。', '探索 AI4Science。']
+    en: ['a PhD candidate in Photonics at EPFL.', 'a high-resolution imaging technology developer.', 'exploring AI4Science for nanoscale measurement.'],
+    zh: ['EPFL 光子学博士研究生。', '高分辨成像技术开发者。', '探索 AI4Science 在微纳测量中的应用。']
   };
   var lines = Array.prototype.slice.call(document.querySelectorAll('#roles .im'));
   var typedEls = lines.map(function (p) { return p.querySelector('.typed'); });
