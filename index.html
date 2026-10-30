@@ -12,7 +12,6 @@
 <script>
   (function () {
     var l = new URLSearchParams(location.search).get('lang');
-    if (!l) { try { l = localStorage.getItem('lang'); } catch (e) {} }
     if (l === 'zh') document.documentElement.classList.add('lang-zh');
   })();
 </script>
@@ -572,7 +571,6 @@
   btn.addEventListener('click', function () {
     var next = lang() === 'zh' ? 'en' : 'zh';
     apply(next);
-    try { localStorage.setItem('lang', next); } catch (e) {}
   });
 
   /* ---------- header: transparent over hero, solid afterwards; highlight current section ---------- */
